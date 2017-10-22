@@ -24,7 +24,7 @@ export default {
       Firebase.auth()
         .signOut()
         .then(() => {
-          this.$router.replace("login");
+          this.$router.replace('sign-in');
         });
     }
   }
