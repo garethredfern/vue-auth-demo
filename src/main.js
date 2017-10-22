@@ -6,6 +6,7 @@ import { store } from './store/store';
 import { routes } from './router/routes';
 
 // Firebase config - this is provided when you create your app
+// Swap out these settings for your project settings
 const config = {
   apiKey: "AIzaSyARIllJX5NwVZf9T5brOqhx3dDvLgGZfl8",
   authDomain: "playing-218ba.firebaseapp.com",
