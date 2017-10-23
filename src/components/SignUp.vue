@@ -48,7 +48,7 @@ export default {
         .createUserWithEmailAndPassword(this.email, this.password)
         .then(
           user => {
-            this.$router.replace("dashboard");
+            this.$router.replace('dashboard');
           },
           error => {
             alert(error.message);
