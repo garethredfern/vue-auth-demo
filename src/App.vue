@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import Firebase from "firebase";
-import Header from "./components/Header.vue";
+import Firebase from 'firebase';
+import Header from './components/Header.vue';
 
 export default {
   components: {
@@ -17,7 +17,7 @@ export default {
   },
   methods: {
     setUser: function() {
-      this.$store.dispatch("setUser");
+      this.$store.dispatch('setUser');
     }
   },
   created() {
