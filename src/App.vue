@@ -8,7 +8,6 @@
 </template>
 
 <script>
-import Firebase from 'firebase';
 import Header from './components/Header.vue';
 
 export default {
