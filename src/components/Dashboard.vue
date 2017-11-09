@@ -2,7 +2,7 @@
   <section class="section">
     <h1 class="title has-text-centered">Dashboard</h1>
     <article class="notification is-info">
-      <p>This is the dasboard area which is secured via the router. A user must have an account and be logged in to view this page.</p>
+      <p>This is the dashboard area which is secured via the router. A user must have an account and be logged in to view this page.</p>
     </article>
   </section>
 </template>
