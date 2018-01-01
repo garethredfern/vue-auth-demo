@@ -15,4 +15,4 @@ npm run dev
 npm run build
 ```
 
-For detailed explanation on how things work read the tutorial.
+For detailed explanation on how things work [read the tutorial](https://medium.freecodecamp.org/managing-user-state-with-vuex-firebase-77eebc64f546).
