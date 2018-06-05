@@ -16,3 +16,5 @@ npm run build
 ```
 
 For detailed explanation on how things work [read the tutorial](https://medium.freecodecamp.org/managing-user-state-with-vuex-firebase-77eebc64f546).
+
+**Please note you will need to add your own firebase credentials to the [config](https://github.com/garethredfern/vue-auth-demo/blob/master/src/main.js#L10)**
