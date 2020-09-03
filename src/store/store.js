@@ -9,18 +9,18 @@ export const store = new Vuex.Store({
     user: null,
   },
   getters: {
-    getUser: (state) => {
+    getUser: state => {
       return state.user;
     },
   },
   mutations: {
-    setUser: (state) => {
+    SET_USER: state => {
       state.user = Firebase.auth().currentUser;
     },
   },
   actions: {
-    setUser: (context) => {
-      context.commit("setUser");
+    setUser: context => {
+      context.commit("SET_USER");
     },
   },
 });

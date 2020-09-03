@@ -1,7 +1,7 @@
 <template>
-  <section class="section">
-    <h1 class="title has-text-centered">Dashboard</h1>
-    <article class="notification is-info">
+  <section>
+    <h1 class="text-center">Dashboard</h1>
+    <article>
       <p>
         This is the dashboard area which is secured via the router. A user must
         have an account and be logged in to view this page.

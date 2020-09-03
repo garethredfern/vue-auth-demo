@@ -1,43 +1,39 @@
 <template>
-  <section class="section">
-    <h1 class="title has-text-centered">Sign-up</h1>
-    <div class="columns">
-      <div class="column is-one-third">
-        <div class="card">
-          <div class="card-header is-centered">
-            <h2 class="card-header-title is-centered">Create an Account</h2>
-          </div>
-          <div class="card-content">
-            <form v-on:submit.prevent>
-              <div class="field">
-                <label class="label">Email</label>
-                <div class="control">
-                  <input
-                    class="input"
-                    type="email"
-                    placeholder="joe@bloggs.com"
-                    v-model="email"
-                  />
-                </div>
-              </div>
-              <div class="field">
-                <label class="label">Password</label>
-                <div class="control">
-                  <input class="input" type="password" v-model="password" />
-                </div>
-              </div>
-              <button
-                type="submit"
-                class="button is-primary"
-                v-on:click="signUp"
-              >
-                Sign-up
-              </button>
-            </form>
-          </div>
+  <section>
+    <h1 class="text-center mb-4 font-bold text-lg">Sign-up</h1>
+    <article class="md:w-1/3 p-5 border rounded bg-gray-100 mx-auto">
+      <header>
+        <h2 class="text-center">Create an Account</h2>
+      </header>
+      <form @submit.prevent>
+        <div class="mb-4">
+          <label for="email" class="font-bold text-gray-700">Email</label>
+          <input
+            type="email"
+            placeholder="joe@bloggs.com"
+            v-model="email"
+            id="email"
+            class="bg-white px-4 py-2 border rounded w-full"
+          />
         </div>
-      </div>
-    </div>
+        <div class="mb-4">
+          <label class="label">Password</label>
+          <input
+            type="password"
+            v-model="password"
+            id="password"
+            class="bg-white px-4 py-2 border rounded w-full"
+          />
+        </div>
+        <button
+          type="submit"
+          @click="signUp"
+          class="bg-green-500 px-4 py-2 rounded text-white border border-green-600"
+        >
+          Sign-up
+        </button>
+      </form>
+    </article>
   </section>
 </template>
 
@@ -45,21 +41,21 @@
 import Firebase from "firebase";
 
 export default {
-  data: function () {
+  data: function() {
     return {
       email: "",
       password: "",
     };
   },
   methods: {
-    signUp: function () {
+    signUp: function() {
       Firebase.auth()
         .createUserWithEmailAndPassword(this.email, this.password)
         .then(
-          (user) => {
+          () => {
             this.$router.replace("dashboard");
           },
-          (error) => {
+          error => {
             alert(error.message);
           }
         );

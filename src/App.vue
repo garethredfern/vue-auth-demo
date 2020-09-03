@@ -1,10 +1,10 @@
 <template>
-  <main id="app" class="section">
-    <div class="container">
-      <nav-main></nav-main>
+  <div id="app">
+    <Header />
+    <main class="container mx-auto py-5">
       <router-view></router-view>
-    </div>
-  </main>
+    </main>
+  </div>
 </template>
 
 <script>
@@ -12,10 +12,10 @@ import Header from "./components/Header.vue";
 
 export default {
   components: {
-    navMain: Header,
+    Header,
   },
   methods: {
-    setUser: function() {
+    setUser() {
       this.$store.dispatch("setUser");
     },
   },
@@ -27,3 +27,7 @@ export default {
   },
 };
 </script>
+
+<style>
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700|Material+Icons");
+</style>

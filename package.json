@@ -31,6 +31,12 @@
     "tailwindcss": "^1.7.6",
     "vue-template-compiler": "^2.6.11"
   },
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": false
+  },
   "eslintConfig": {
     "root": true,
     "env": {
