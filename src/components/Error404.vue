@@ -6,11 +6,3 @@
     </article>
   </section>
 </template>
-
-<script>
-</script>
-
-<style lang="scss">
-// Basic styles are pulled in from the Bulma framework https://bulma.io/
-// These style tags could be omitted as they arre not used.
-</style>

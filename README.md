@@ -1,6 +1,6 @@
 # Vue Auth Demo with Firebase
 
-> A Vue.js project that provides a simple demo for securing pages with vue-router, Vuex and Firebase to handle authentication and user managment.
+> A Vue.js project that provides a simple demo for securing pages with vue-router, Vuex and Firebase to handle authentication and user management.
 
 **Please note you will need to add your own firebase credentials to the [config](https://github.com/garethredfern/vue-auth-demo/blob/master/src/main.js#L10).**
 
@@ -8,7 +8,7 @@ For detailed explanation on how things work [read the tutorial](https://medium.f
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 npm install
 

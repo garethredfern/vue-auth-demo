@@ -1,26 +1,26 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
-import Firebase from 'firebase';
+import Vue from "vue";
+import Vuex from "vuex";
+import Firebase from "firebase";
 
 Vue.use(Vuex);
 
 export const store = new Vuex.Store({
   state: {
-    user: null
+    user: null,
   },
   getters: {
-    getUser: state => {
+    getUser: (state) => {
       return state.user;
-    }
+    },
   },
   mutations: {
-    setUser: state => {
+    setUser: (state) => {
       state.user = Firebase.auth().currentUser;
-    }
+    },
   },
   actions: {
-    setUser: context => {
-      context.commit('setUser');
-    }
-  }
+    setUser: (context) => {
+      context.commit("setUser");
+    },
+  },
 });
