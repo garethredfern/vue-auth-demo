@@ -33,7 +33,7 @@ export default {
     },
   },
   methods: {
-    signOut: function() {
+    signOut() {
       Firebase.auth()
         .signOut()
         .then(() => {

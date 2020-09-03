@@ -51,14 +51,12 @@ export default {
     signUp: function() {
       Firebase.auth()
         .createUserWithEmailAndPassword(this.email, this.password)
-        .then(
-          () => {
-            this.$router.replace("dashboard");
-          },
-          error => {
-            alert(error.message);
-          }
-        );
+        .then(() => {
+          this.$router.replace("dashboard");
+        })
+        .catch(error => {
+          console.log(error.message);
+        });
     },
   },
 };

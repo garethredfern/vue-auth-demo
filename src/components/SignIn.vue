@@ -55,14 +55,12 @@ export default {
     signIn: function() {
       Firebase.auth()
         .signInWithEmailAndPassword(this.email, this.password)
-        .then(
-          () => {
-            this.$router.replace("dashboard");
-          },
-          error => {
-            alert(error.message);
-          }
-        );
+        .then(() => {
+          this.$router.replace("dashboard");
+        })
+        .catch(error => {
+          console.log(error.message);
+        });
     },
   },
 };
