@@ -28,7 +28,7 @@
         <button
           type="submit"
           @click="signUp"
-          class="bg-green-500 px-4 py-2 rounded text-white border border-green-600"
+          class="bg-green-500 px-4 py-2 rounded text-white border border-green-600 transition duration-500 ease-in-out hover:bg-green-600"
         >
           Sign-up
         </button>

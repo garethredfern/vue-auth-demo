@@ -1,7 +1,7 @@
 <template>
   <header class="px-5 py-2 bg-gray-200 border-b">
-    <div class="container mx-auto">
-      <nav class="flex">
+    <div class="container mx-auto flex justify-between items-center">
+      <nav class="flex items-center">
         <router-link to="/" class="mr-4">
           <i class="material-icons">
             home
@@ -18,6 +18,7 @@
         >
         <button @click="signOut" class="mr-4" v-if="user">Sign-out</button>
       </nav>
+      <h2 v-if="user">{{ user.email }}</h2>
     </div>
   </header>
 </template>

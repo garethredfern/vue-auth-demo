@@ -8,17 +8,18 @@ import "@/assets/css/main.css";
 
 // Firebase config - this is provided when you create your app
 // Swap out these settings for your project settings
-const config = {
-  apiKey: "AIzaSyARIllJX5NwVZf9T5brOqhx3dDvLgGZfl8",
-  authDomain: "playing-218ba.firebaseapp.com",
-  databaseURL: "https://playing-218ba.firebaseio.com",
-  projectId: "playing-218ba",
-  storageBucket: "playing-218ba.appspot.com",
-  messagingSenderId: "1092711989826",
+var firebaseConfig = {
+  apiKey: "AIzaSyCxfKEMCvc-rtExZTsJQKPr4mbXkmQYkJY",
+  authDomain: "vue-auth-demo-637b2.firebaseapp.com",
+  databaseURL: "https://vue-auth-demo-637b2.firebaseio.com",
+  projectId: "vue-auth-demo-637b2",
+  storageBucket: "vue-auth-demo-637b2.appspot.com",
+  messagingSenderId: "624803255895",
+  appId: "1:624803255895:web:c4f09775fe732e8f3b7512",
 };
 
 // Initialize Firebase
-Firebase.initializeApp(config);
+Firebase.initializeApp(firebaseConfig);
 
 // Set-up and use the Vue Router
 // Pass in your routes and then
