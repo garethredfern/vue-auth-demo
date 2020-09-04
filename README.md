@@ -4,7 +4,14 @@
 
 **Please note you will need to add your own firebase credentials to the [config](https://github.com/garethredfern/vue-auth-demo/blob/master/src/main.js#L10).**
 
-For detailed explanation on how things work [read the tutorial](https://medium.freecodecamp.org/managing-user-state-with-vuex-firebase-77eebc64f546).
+For detailed explanation on how things work read the following tutorials:
+
+- [Authenticate Users Using Firebase & VueJS](https://redfern.dev/articles/authenticate-users-using-firebase-and-vuejs)
+- [How to Manage User State With Vuex and Firebase](https://redfern.dev/articles/manage-user-state-vuex-and-firebase)
+
+To follow along with each of the blog posts the code has seperate branches for each step:
+
+1. [Basic Auth](https://github.com/garethredfern/vue-auth-demo/tree/basic-auth)
 
 ## Build Setup
 
