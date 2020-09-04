@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import Firebase from "firebase";
+import firebase from "firebase";
 
 export default {
   data: function() {
@@ -49,7 +49,8 @@ export default {
   },
   methods: {
     signUp: function() {
-      Firebase.auth()
+      firebase
+        .auth()
         .createUserWithEmailAndPassword(this.email, this.password)
         .then(() => {
           this.$router.replace("dashboard");

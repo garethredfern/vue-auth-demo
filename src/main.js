@@ -1,6 +1,6 @@
 import Vue from "vue";
 import App from "./App.vue";
-import Firebase from "firebase";
+import firebase from "firebase";
 import VueRouter from "vue-router";
 import { store } from "./store/store";
 import { routes } from "./router/routes";
@@ -19,7 +19,7 @@ var firebaseConfig = {
 };
 
 // Initialize Firebase
-Firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 
 // Set-up and use the Vue Router
 // Pass in your routes and then
@@ -36,7 +36,7 @@ const router = new VueRouter({
 // if it does check whether the user is signed into the web app or
 // redirect to the sign-in page to enable them to sign-in
 router.beforeEach((to, from, next) => {
-  const currentUser = Firebase.auth().currentUser;
+  const currentUser = firebase.auth().currentUser;
   const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
 
   if (requiresAuth && !currentUser) {
@@ -51,7 +51,7 @@ router.beforeEach((to, from, next) => {
 // Wrap the vue instance in a Firebase onAuthStateChanged method
 // This stops the execution of the navigation guard 'beforeEach'
 // method until the Firebase initialization ends
-Firebase.auth().onAuthStateChanged(() => {
+firebase.auth().onAuthStateChanged(() => {
   new Vue({
     el: "#app",
     store: store,
