@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="app">
     <Header />
     <main class="container mx-auto py-5">
       <router-view></router-view>
