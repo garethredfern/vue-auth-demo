@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import Firebase from "firebase";
+import firebase from "firebase";
 
 export default {
   data: function() {
@@ -53,7 +53,8 @@ export default {
   },
   methods: {
     signIn: function() {
-      Firebase.auth()
+      firebase
+        .auth()
         .signInWithEmailAndPassword(this.email, this.password)
         .then(() => {
           this.$router.replace("dashboard");

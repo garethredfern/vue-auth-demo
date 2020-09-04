@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import Firebase from "firebase";
+import firebase from "firebase";
 
 Vue.use(Vuex);
 
@@ -13,7 +13,7 @@ export const store = new Vuex.Store({
   },
   mutations: {
     SET_USER: state => {
-      state.user = Firebase.auth().currentUser;
+      state.user = firebase.auth().currentUser;
     },
   },
   actions: {
