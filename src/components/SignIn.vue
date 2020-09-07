@@ -7,6 +7,14 @@
           Sign in to Your Account
         </h2>
       </header>
+      <transition name="fade">
+        <p
+          class="bg-red-100 p-5 my-5 border border-red-200 rounded text-red-500"
+          v-if="error"
+        >
+          {{ error }}
+        </p>
+      </transition>
       <form @submit.prevent>
         <div class="mb-4">
           <label for="email" class="font-bold text-gray-700">Email</label>
@@ -45,14 +53,15 @@
 import firebase from "firebase";
 
 export default {
-  data: function() {
+  data() {
     return {
       email: "",
       password: "",
+      error: null,
     };
   },
   methods: {
-    signIn: function() {
+    signIn() {
       firebase
         .auth()
         .signInWithEmailAndPassword(this.email, this.password)
@@ -60,7 +69,7 @@ export default {
           this.$router.replace("dashboard");
         })
         .catch(error => {
-          console.log(error.message);
+          this.error = error.message;
         });
     },
   },

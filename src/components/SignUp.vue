@@ -5,6 +5,14 @@
       <header>
         <h2 class="text-center">Create an Account</h2>
       </header>
+      <transition name="fade">
+        <p
+          class="bg-red-100 p-5 my-5 border border-red-200 rounded text-red-500"
+          v-if="error"
+        >
+          {{ error }}
+        </p>
+      </transition>
       <form @submit.prevent>
         <div class="mb-4">
           <label for="email" class="font-bold text-gray-700">Email</label>
@@ -41,22 +49,27 @@
 import firebase from "firebase";
 
 export default {
-  data: function() {
+  data() {
     return {
       email: "",
       password: "",
+      error: null,
     };
   },
   methods: {
-    signUp: function() {
+    signUp() {
       firebase
         .auth()
         .createUserWithEmailAndPassword(this.email, this.password)
         .then(() => {
-          this.$router.replace("dashboard");
+          const user = firebase.auth().currentUser;
+          const actionCodeSettings = {
+            url: `${process.env.VUE_APP_HOST_NAME}/sign-in/?email=${user.email}`,
+          };
+          user.sendEmailVerification(actionCodeSettings);
         })
         .catch(error => {
-          console.log(error.message);
+          this.error = error.message;
         });
     },
   },
