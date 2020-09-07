@@ -1,3 +1,4 @@
+import firebase from "firebase";
 import Home from "../components/Home.vue";
 import SignIn from "../components/SignIn.vue";
 import SignUp from "../components/SignUp.vue";
@@ -19,11 +20,27 @@ export const routes = [
     path: "/sign-in",
     name: "signIn",
     component: SignIn,
+    beforeEnter(to, from, next) {
+      const user = firebase.auth().currentUser;
+      if (user) {
+        next({ name: "dashboard" });
+      } else {
+        next();
+      }
+    },
   },
   {
     path: "/sign-up",
     name: "signUp",
     component: SignUp,
+    beforeEnter(to, from, next) {
+      const user = firebase.auth().currentUser;
+      if (user) {
+        next({ name: "dashboard" });
+      } else {
+        next();
+      }
+    },
   },
   {
     path: "/dashboard",
