@@ -19,6 +19,7 @@
             v-model="email"
             id="email"
             class="bg-white px-4 py-2 border rounded w-full"
+            required
           />
         </div>
         <div class="mb-4">
