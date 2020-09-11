@@ -1,12 +1,7 @@
 <template>
   <section>
-    <h1 class="text-center mb-4 font-bold text-lg">Sign-in</h1>
+    <h1 class="text-center mb-4 font-bold text-lg">Forgot Password</h1>
     <article class="md:w-1/3 p-5 border rounded bg-gray-100 mx-auto">
-      <header>
-        <h2 class="text-center">
-          Sign in to Your Account
-        </h2>
-      </header>
       <transition name="fade">
         <p
           class="bg-red-100 p-5 my-5 border border-red-200 rounded text-red-500"
@@ -27,25 +22,16 @@
           />
         </div>
         <div class="mb-4">
-          <label for="password" class="font-bold text-gray-700">Password</label>
-          <input
-            type="password"
-            v-model="password"
-            id="password"
-            class="bg-white px-4 py-2 border rounded w-full"
-          />
-        </div>
-        <div class="mb-4 flex justify-between items-center">
           <button
             type="submit"
-            @click="signIn"
+            @click="sendEmail"
             class="bg-green-500 px-4 py-2 rounded text-white border border-green-600 transition duration-500 ease-in-out hover:bg-green-600"
           >
-            Sign-in
+            <transition name="fade" mode="out-in">
+              <span v-if="!emailSending">Send</span>
+              <span v-else>Sending...</span>
+            </transition>
           </button>
-          <router-link :to="{ name: 'forgotPassword' }" class="hover:underline"
-            >Forgot password</router-link
-          >
         </div>
       </form>
     </article>
@@ -59,20 +45,26 @@ export default {
   data() {
     return {
       email: "",
-      password: "",
       error: null,
+      emailSending: false,
     };
   },
   methods: {
-    signIn() {
+    sendEmail() {
+      if (!this.email) {
+        this.error = "Please type in a valid email address.";
+        return;
+      }
       this.error = null;
+      this.emailSending = true;
       firebase
         .auth()
-        .signInWithEmailAndPassword(this.email, this.password)
+        .sendPasswordResetEmail(this.email)
         .then(() => {
-          this.$router.replace("dashboard");
+          this.emailSending = false;
         })
         .catch(error => {
+          this.emailSending = false;
           this.error = error.message;
         });
     },
