@@ -2,7 +2,9 @@
   <div id="app">
     <Header />
     <main class="container mx-auto py-5">
-      <router-view></router-view>
+      <transition name="fade" mode="out-in">
+        <router-view></router-view>
+      </transition>
     </main>
   </div>
 </template>
